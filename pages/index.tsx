@@ -35,7 +35,7 @@ const Home: NextPage = () => {
                 response_type: 'code',
                 client_id: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT,
                 scope: 'user-library-read user-library-modify',
-                redirect_uri: `http://localhost:3000/login`,
+                redirect_uri: `${process.env.NEXT_PUBLIC_REDIRECT_URL}/login`,
               },
             }}
           >
