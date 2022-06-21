@@ -1,8 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Spotify Artists
 
-## Getting Started
+This is a project based of the Spotify API. The main goal is to allow the user to search for their favourite artists and manage their saved albums. In order to do this the already saved albums should be listed under the profile screen where the user can choose if they want to remove it. 
 
-First, run the development server:
+this serves the purpose of being a practice environment, and portfolios project for future reference
+
+## Running it locally
+
+As this project relies on the Spotify API, it requires some key properties to properly set it up. In development you can set up the `.env.local` with all these keys listed in the `.env` file, the project will pick them up automatically. Feel free to use your own requesting them from the [Spotify Developer site](https://developer.spotify.com/)
+
+To get it running this should be enough:
 
 ```bash
 npm run dev
@@ -12,23 +18,61 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Test the live version!
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This app is currently being hosted with [Vercel](https://spotify-artists.vercel.app/dashboard). You can try it from that link given that your account is added to the developer account dashboard
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## File structure
 
-## Learn More
+It follows (kind of) the standard structure for any Next.js project
 
-To learn more about Next.js, take a look at the following resources:
+```
+project/
+│   .env.local (you have to add this one)
+│   .eslintrc
+│   .gitignore
+│   next-env.d.ts
+│   next.config.js
+│   package.json
+│   README.md
+│
+└───components/
+│   │   ListItem.tsx
+│   │   Navbar.tsx
+│   └───...
+│
+└───lib/
+│   │   
+│   └───hooks
+│   │   │   useUser.hook.ts
+│   │   │   ...
+│   │
+│   └───services
+│   │   │   someservice.ts
+│   │   │   ...
+│   │
+│   └───types/
+│       └───types folder/
+│       │   ...
+│
+└───pages/
+│   │   _app.tsx
+│   │   index.tsx
+│   │   ...
+│
+└───public/
+│   │   favicon.ico
+│   │   ...
+│   └─── 
+│
+└───test/
+│   │   mock
+│   │   ...
+│   └─── 
+│
+└───styles/ (considering moving to lib)
+    │   global.css
+    |   ...
+    └─── 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
