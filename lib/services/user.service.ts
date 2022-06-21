@@ -9,9 +9,9 @@ import axiosClient from './axios.service'
 
 const client = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT
 const secret = process.env.NEXT_PUBLIC_SPOTIFY_SECRET
+const redirect_uri = `${process.env.NEXT_PUBLIC_REDIRECT_URL}/login`
 
 export async function fetchToken(code: string): Promise<SpotifyToken> {
-  const redirect_uri = `http://localhost:3000/login`
   const base64 = Buffer.from(`${client}:${secret}`).toString('base64')
 
   const data = new URLSearchParams()
